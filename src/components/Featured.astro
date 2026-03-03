@@ -1,0 +1,15 @@
+---
+import Card from '@/components/ui/Card.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Destacado' } = Astro.props;
+---
+
+<Card title={title}>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <slot />
+  </div>
+</Card>

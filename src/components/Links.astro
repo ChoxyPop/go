@@ -1,0 +1,15 @@
+---
+import Card from '@/components/ui/Card.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Mis Links' } = Astro.props;
+---
+
+<Card title={title}>
+  <div class="flex w-full flex-col gap-3">
+    <slot />
+  </div>
+</Card>

@@ -1,0 +1,145 @@
+---
+import type { MetadataProps } from '@/types/metadata.ts';
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import Featured from '@/components/Featured.astro';
+import Links from '@/components/Links.astro';
+import Profile from '@/components/Profile.astro';
+import Card from '@/components/ui/Card.astro';
+import FeaturedItem from '@/components/ui/FeaturedItem.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
+import LinkItem from '@/components/ui/LinkItem.astro';
+
+const metadata: MetadataProps = {
+  title: 'Hansky Mulya | Web Developer & Creator',
+  description:
+    "Explore all my links in one place — portfolio, GitHub, LinkedIn, Dribbble, and more. Connect with me and see what I'm building.",
+  keywords:
+    'Hansky Mulya, link in bio, web developer, portfolio, GitHub, LinkedIn, Dribbble, Twitter, contact',
+  author: 'Hansky Mulya',
+  image: 'https://images.unsplash.com/photo-1699885960867-56d5f5262d38?w=1200&h=630&fit=crop',
+  locale: 'es_AR',
+  twitterHandle: '@choxypop',
+};
+---
+
+<BaseLayout metadata={metadata}>
+  <Profile
+    name="Choxy"
+    username="ChoxyPop"
+    about="Lleno de dulzura, diversión y mucha creatividad, así soy yo, tu femboy celeste ¡Visita mi web para saber más de mí! 😉🩵"
+    statusText="Contactame"
+    statusEmoji="📧"
+    statusLink="mailto:info@choxypop.com"
+    avatarSrc="https://cdn.choxypop.com/equipo/choxy.webp?w=128&h=128&fit=crop"
+    bannerSrc="https://images.unsplash.com/photo-1699885960867-56d5f5262d38?w=600&h=240&fit=crop"
+    badges={[
+      { label: 'verificado', colorClass: 'bg-blue-500 text-white' },
+      { label: 'pro', colorClass: 'bg-yellow-500 text-white' },
+      { label: 'dev', colorClass: 'bg-green-500 text-white' },
+    ]}
+    stats={[
+      { value: '48', label: 'Perfiles' },
+      { value: '230.2K', label: 'Seguidores' },
+      { value: '2', label: 'Siguiendo' },
+    ]}
+  />
+
+  <Links title="My Links">
+    <LinkItem href="https://example.com" label="Portfolio Website">
+      <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="m2 1.97101 1.40082 0.61286 3.36543 1.47237C8.02889 3.38206 9.47104 3.00002 11 3.00002c1.529 0 2.9711 0.38204 4.2338 1.05622l3.3654 -1.47237L20 1.97101v6.02901h1c0.5523 0 1 0.44772 1 1V12c0 0.5523 -0.4477 1 -1 1h-1.0549c-0.4975 4.5 -4.3125 8 -8.9451 8 -4.97056 0 -9 -4.0294 -9 -9V1.97101Zm16 3.05803v2.97098h-2c-0.5523 0 -1 0.44772 -1 1h-2c0 -0.55228 -0.4477 -1 -1 -1H7c-0.55228 0 -1 0.44772 -1 1H4V5.02904l2.42518 1.06102 0.47823 0.20922 0.44508 -0.27273C8.41088 5.37553 9.66006 5.00002 11 5.00002c1.3399 0 2.5891 0.37551 3.6515 1.02653l0.4451 0.27273 0.4782 -0.20922L18 5.02904ZM13 11h2v1c0 0.5523 0.4477 1 1 1h1.9291c-0.4852 3.3923 -3.4026 6 -6.9291 6 -3.86599 0 -7 -3.134 -7 -7v-1h2v1c0 0.5523 0.44772 1 1 1h5c0.5523 0 1 -0.4477 1 -1v-1Zm-0.5 4.75c-0.8145 0 -2.1195 -0.4302 -2.96967 -1.2803l-1.06066 1.0607C9.61952 16.6802 11.3145 17.25 12.5 17.25v-1.5Z"
+          clip-rule="evenodd"
+          stroke-width="1"></path>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://dribbble.com/username" label="Dribbble">
+      <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+        ></path>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://github.com/username" label="GitHub">
+      <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.839c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.917.678 1.847 0 1.333-.012 2.409-.012 2.734 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"
+        ></path>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://linkedin.com/in/username" label="LinkedIn">
+      <svg slot="icon" width="20" height="20" viewBox="0 0 448 512" fill="currentColor">
+        <path
+          d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.29 108 0 83.71 0 54.14A54.14 54.14 0 0 1 108.28 54.1c0 29.57-24.29 53.86-54.44 53.86zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 16-44 31.4-2.3 5.5-2.9 13.1-2.9 20.8V448h-92.5s1.2-241.1 0-266.1h92.4v37.7c12.3-19 34.3-46.2 83.4-46.2 60.8 0 106.4 39.7 106.4 125.2V448z"
+        ></path>
+      </svg>
+    </LinkItem>
+
+    <LinkItem href="https://twitter.com/username" label="Twitter">
+      <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+        ></path>
+      </svg>
+    </LinkItem>
+  </Links>
+
+  <Featured title="Featured">
+    <FeaturedItem
+      href="https://example.com"
+      imageSrc="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=400&h=400&q=80"
+      altText="Next.js UI Kit"
+      title="Next.js UI Kit"
+    />
+
+    <FeaturedItem
+      href="https://example.com"
+      imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&h=400&q=80"
+      altText="React Dashboard"
+      title="React Dashboard"
+    />
+
+    <FeaturedItem
+      href="https://example.com"
+      imageSrc="https://images.unsplash.com/photo-1648134859186-a05fb609f41e?auto=format&fit=crop&w=400&h=400&q=80"
+      altText="SaaS Landing Page"
+      title="SaaS Landing Page"
+    />
+
+    <FeaturedItem
+      href="https://example.com"
+      imageSrc="https://images.unsplash.com/photo-1688561807440-8a57dfa77ee3?auto=format&fit=crop&w=400&h=400&q=80"
+      altText="eCommerce Platform"
+      title="eCommerce Platform"
+    />
+  </Featured>
+
+  <Card title="Media">
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=f0gc62cVwTZgZUTJ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </Card>
+
+  <Card title="Get in Touch">
+    <img
+      src="/jakarta-map.png"
+      alt="Map of Jakarta"
+      class="size-full max-w-full rounded-radius object-cover shadow-md"
+    />
+
+    <LinkButton href="mailto:hansky@example.com" text="Contact Me" isEmail={true} />
+  </Card>
+</BaseLayout>

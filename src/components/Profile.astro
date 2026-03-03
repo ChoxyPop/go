@@ -1,0 +1,247 @@
+---
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import StatItem from '@/components/ui/StatItem.astro';
+
+interface BadgeItem {
+  label: string;
+  colorClass?: string;
+}
+
+interface Stat {
+  value: string | number;
+  label: string;
+}
+
+interface Props {
+  name: string;
+  username: string;
+  about: string;
+  statusEmoji?: string;
+  statusText: string;
+  statusLink?: string;
+  avatarSrc: string;
+  bannerSrc: string;
+  badges?: BadgeItem[];
+  stats?: Stat[];
+}
+
+const {
+  name,
+  username,
+  about,
+  statusEmoji,
+  statusText,
+  statusLink,
+  avatarSrc,
+  bannerSrc,
+  badges,
+  stats,
+} = Astro.props;
+---
+
+<Card className="overflow-hidden p-0">
+  <!-- Banner -->
+  <div class="group relative aspect-[2.5/1] bg-background-hover transition-all duration-300">
+    <img
+      src={bannerSrc}
+      alt="Banner"
+      class="size-full object-cover object-center opacity-100 transition-opacity duration-300"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#1b1b1b] to-[#222222] opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+    >
+    </div>
+  </div>
+
+  <!-- Avatar -->
+  <div
+    class="pointer-events-none relative -top-[42px] z-10 flex items-end justify-between px-6 md:-top-[52px]"
+  >
+    <div class="pointer-events-auto relative">
+      <div
+        id="avatar"
+        class="relative aspect-square size-24 cursor-pointer overflow-hidden rounded-full border-4 border-background-card bg-background-tile shadow-lg transition-transform duration-300 md:size-28"
+      >
+        <img src={avatarSrc} alt={name} class="size-full rounded-full object-cover" />
+        <div
+          class="shimmer pointer-events-none absolute top-0 left-[-100%] size-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-500"
+        >
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    {
+      statusLink ? (
+        <a
+          href={statusLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm transition-colors duration-300 hover:bg-background-hover hover:text-text-primary"
+        >
+          {statusEmoji ? (
+            <span class="text-base">{statusEmoji}</span>
+          ) : (
+            <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+              <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
+            </div>
+          )}
+          {statusText}
+        </a>
+      ) : (
+        <div class="pointer-events-auto flex items-center gap-2 rounded-md bg-background-tile px-3 py-1 text-sm font-medium text-text-secondary backdrop-blur-sm">
+          {statusEmoji ? (
+            <span class="text-base">{statusEmoji}</span>
+          ) : (
+            <div class="relative size-1.5 shrink-0 rounded-full bg-green-400">
+              <div class="absolute top-[-3px] left-[-3px] size-3 animate-ping rounded-full bg-green-400 opacity-20" />
+            </div>
+          )}
+          {statusText}
+        </div>
+      )
+    }
+  </div>
+
+  <!-- User profile -->
+  <div class="-mt-8 px-6 pb-6">
+    <span class="mb-1 block text-xl font-semibold text-text-primary md:text-2xl">{name}</span>
+    <p class="mb-4 text-sm text-text-secondary md:text-base">@{username}</p>
+
+    <!-- Badges -->
+    {
+      badges?.length && (
+        <div class="mb-5 flex flex-wrap items-center gap-1.5">
+          {badges.map((badge) => (
+            <Badge label={badge.label} className={badge.colorClass} />
+          ))}
+        </div>
+      )
+    }
+
+    <!-- About Me -->
+    <div class="mb-3 flex items-center text-base font-semibold text-text-primary uppercase">
+      Sobre Mi
+      <span class="ml-3 h-0.5 flex-grow bg-border"></span>
+    </div>
+    <div class="mb-5 text-sm leading-relaxed text-pretty text-text-secondary md:text-base">
+      {about}
+    </div>
+
+    <!-- Stats -->
+    {
+      stats?.length && (
+        <div class="flex gap-3">
+          {stats.map((stat) => (
+            <StatItem className="stat" value={stat.value} label={stat.label} />
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Slot for additional content -->
+    <slot />
+  </div>
+</Card>
+
+<style>
+  @keyframes shimmer-right {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes shimmer-left {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  .shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--accent-shimmer), transparent);
+    pointer-events: none;
+  }
+
+  .shimmer.animate-right {
+    animation: shimmer-right 0.5s ease-out;
+  }
+
+  .shimmer.animate-left {
+    animation: shimmer-left 0.5s ease-out;
+  }
+</style>
+
+<script>
+  // Avatar shimmer hover effect
+  const avatar = document.getElementById('avatar') as HTMLElement | null;
+
+  if (avatar) {
+    const shimmer = avatar.querySelector('.shimmer') as HTMLElement | null;
+
+    avatar.addEventListener('mouseover', () => {
+      avatar.style.transform = 'scale(1.05)';
+      avatar.style.borderColor = 'var(--border)';
+
+      if (shimmer) {
+        shimmer.classList.remove('animate-left');
+        void shimmer.offsetWidth;
+        shimmer.classList.add('animate-right');
+      }
+    });
+
+    avatar.addEventListener('mouseout', () => {
+      avatar.style.transform = 'scale(1)';
+      avatar.style.borderColor = 'var(--background-card)';
+
+      if (shimmer) {
+        shimmer.classList.remove('animate-right');
+        void shimmer.offsetWidth;
+        shimmer.classList.add('animate-left');
+      }
+    });
+  }
+
+  // Stat counter animation
+  document.querySelectorAll('.stat').forEach((stat) => {
+    const statValue = stat.querySelector('.stat-value');
+    if (!statValue) return;
+
+    const original = statValue.textContent || '0';
+    const numeric = parseInt(original.replace(/[^\d]/g, ''), 10);
+
+    let isAnimating = false;
+
+    stat.addEventListener('mouseover', () => {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      let counter = 0;
+      const interval = setInterval(() => {
+        counter += Math.ceil(numeric / 20);
+        if (counter >= numeric) {
+          clearInterval(interval);
+          statValue.textContent = original;
+        } else {
+          statValue.textContent = counter.toString();
+        }
+      }, 30);
+    });
+
+    stat.addEventListener('mouseleave', () => {
+      isAnimating = false;
+      statValue.textContent = original;
+    });
+  });
+</script>
