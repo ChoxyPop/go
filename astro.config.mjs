@@ -1,7 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
-import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -9,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://go.choxypop.com',
   output: 'static',
-  adapter: cloudflare(),
+  // Eliminamos el adaptador de Cloudflare para evitar errores de arquitectura en Android
   prefetch: true,
   trailingSlash: 'never',
   build: {
