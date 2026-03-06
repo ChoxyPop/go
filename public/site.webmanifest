@@ -1,6 +1,6 @@
 {
-  "name": "LinkBio",
-  "short_name": "LinkBio",
+  "name": "ChoxyPop Go",
+  "short_name": "ChoxyGo",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#f9f8f9",
-  "background_color": "#f9f8f9",
+  "theme_color": "#2F82C4",
+  "background_color": "#2f82c4",
   "display": "standalone"
 }

@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "title": "ChoxyPop Go - Enlaces Oficiales",
+    "description": "Descubre todos los enlaces oficiales de ChoxyPop para disfrutar de su contenido, contactarlo, jugar con él o unirte a su comunidad.",
+    "keywords": "Choxy, femboy, linktree, redes oficiales, link in bio",
+    "author": "ChoxyPop Team",
+    "twitterHandle": "@choxypop"
+  },
+  "profile": {
+    "name": "Choxy",
+    "username": "ChoxyPop",
+    "about": "Lleno de dulzura, diversión y mucha creatividad, así soy yo, tu femboy celeste ¡Visita mi web para saber más de mí! 😉🩵",
+    "avatar": "https://cdn.choxypop.com/equipo/choxy.webp",
+    "banner": "/banner.avif",
+    "status": {
+      "text": "Contáctame",
+      "emoji": "📧",
+      "link": "mailto:info@choxypop.com"
+    },
+    "badges": [
+      { "label": "verificado", "color": "bg-blue-500" },
+      { "label": "creador", "color": "bg-yellow-500" }
+    ],
+    "stats": [
+      { "value": "32", "label": "Perfiles" },
+      { "value": "95.9K", "label": "Seguidores" },
+      { "value": "1", "label": "Siguiendo" }
+    ]
+  },
+  "sections": [
+{
+      "type": "links",
+      "title": "Sitios Web",
+      "items": [
+        { "label": "Principal (choxypop.com)", "url": "https://choxypop.com", "icon": "ph:globe-bold" },
+        { "label": "Documentación", "url": "https://docs.choxypop.com", "icon": "ph:book-open-text-bold" },
+        { "label": "Blog", "url": "https://blog.choxypop.com", "icon": "ph:article-medium-bold" },
+        { "label": "Verificación", "url": "https://verify.choxypop.com", "icon": "ph:seal-check-bold" }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Comunidad",
+      "items": [
+        { "label": "Facebook Group", "url": "https://go.choxypop.com/invite/facebook", "icon": "mdi:facebook-box" },
+        { "label": "WhatsApp Group", "url": "https://go.choxypop.com/invite/whatsapp", "icon": "mdi:whatsapp" },
+        { "label": "Roblox Group", "url": "https://go.choxypop.com/invite/roblox", "icon": "simple-icons:roblox" },
+        { "label": "Discord Server", "url": "https://go.choxypop.com/invite/discord", "icon": "fa6-brands:discord" },
+        { "label": "Minecraft Server", "url": "https://go.choxypop.com/invite/minecraft", "icon": "mdi:minecraft" }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Redes Sociales",
+      "items": [
+        { "label": "WhatsApp", "url": "https://go.choxypop.com/whatsapp", "icon": "mdi:whatsapp" },
+        { "label": "Instagram", "url": "https://instagram.com/choxypop", "icon": "mdi:instagram" },
+        { "label": "Mastodon", "url": "https://mastodon.social/choxypop", "icon": "mdi:mastodon" },
+        { "label": "Wattpad", "url": "https://wattpad.com/choxypop", "icon": "simple-icons:wattpad" },
+        { "label": "X / Twitter", "url": "https://x.com/choxypop", "icon": "fa6-brands:x-twitter" },
+        { "label": "TikTok", "url": "https://tiktok.com/@choxypop", "icon": "fa6-brands:tiktok" },
+        { "label": "YouTube", "url": "https://youtube.com/@choxypop", "icon": "mdi:youtube" },
+        { "label": "Facebook", "url": "https://facebook.com/choxypop.oficial", "icon": "mdi:facebook-box" },
+        { "label": "Threads", "url": "https://threads.com/@choxypop", "icon": "fa6-brands:threads" },
+        { "label": "BlueSky", "url": "https://bsky.app/profile/choxypop.com", "icon": "fa6-brands:bluesky" },
+        { "label": "DeviantArt", "url": "https://deviantart.com/choxypop", "icon": "fa6-brands:deviantart" }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Perfiles de Juegos",
+      "items": [
+        { "label": "Roblox", "url": "https://go.choxypop.com/roblox", "icon": "simple-icons:roblox" },
+        { "label": "Xbox", "url": "https://xbox.com/play/user/choxypop", "icon": "fa6-brands:xbox" },
+        { "label": "Steam", "url": "https://steamcommunity.com/id/choxypop", "icon": "fa6-brands:steam" },
+        { "label": "Itch.io", "url": "https://choxypop.itch.io", "icon": "fa6-brands:itch-io" }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Aporta",
+      "items": [
+        { "label": "Ko-fi", "url": "https://ko-fi.com/choxypop", "icon": "simple-icons:kofi" },
+        { "label": "Google Reviews", "url": "https://go.choxypop.com/google", "icon": "mdi:google-my-business" },
+        { "label": "Trustpilot", "url": "https://trustpilot.com/review/choxypop.com", "icon": "simple-icons:trustpilot" },
+        { "label": "Sticker.ly", "url": "https://sticker.ly/user/choxypop", "icon": "material-symbols:sticker" }
+      ]
+    }
+  ]
+}

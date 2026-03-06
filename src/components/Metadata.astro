@@ -2,17 +2,17 @@
 import type { MetadataProps } from '@/types/metadata.ts';
 
 const {
-  title = 'LinkBio',
-  description = 'LinkBio is a simple and minimalist link-in-bio single page that allows you to share multiple links with your audience.',
-  keywords = 'linkbio, bio link, link in bio, single page, minimalist, simple',
-  author = 'Hansky Mulya',
+  title = '',
+  description = '',
+  keywords = '',
+  author = '',
   image = new URL('/opengraph.png', Astro.site),
   locale = 'es_AR',
-  twitterHandle = '@choxypop',
+  twitterHandle = '',
 } = Astro.props as MetadataProps;
 
 const url = new URL(Astro.url.pathname, Astro.site);
-const siteName = 'ChoxyPop';
+const siteName = 'ChoxyPop Go';
 const type = 'profile';
 ---
 
@@ -45,23 +45,35 @@ const type = 'profile';
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" is:inline>
   {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "url": "https://yourdomain.com",
-    "name": "Hansky Mulya — LinkBio",
-    "description": "A simple link‑in‑bio page for Hansky Mulya, aggregating my most important links in one place.",
-    "image": "https://yourdomain.com/avatar.jpg",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Hansky Mulya",
-      "url": "https://yourdomain.com",
-      "image": "https://yourdomain.com/avatar.jpg",
-      "sameAs": [
-        "https://dribbble.com/username",
-        "https://github.com/username",
-        "https://linkedin.com/in/username",
-        "https://twitter.com/username"
-      ]
-    }
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://go.choxypop.com",
+  "name": "ChoxyPop Go - Enlaces Oficiales",
+  "description": "Descubre todos los enlaces oficiales de ChoxyPop para disfrutar de su contenido, contactarlo, jugar con él o unirte a su comunidad.",
+  "image": "https://cdn.choxypop.com/equipo/choxy.webp",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "ChoxyPop",
+    "alternateName": "Choxy",
+    "url": "https://choxypop.com",
+    "image": "https://cdn.choxypop.com/equipo/choxy.webp",
+    "description": "Creador de contenido y femboy celeste lleno de creatividad.",
+    "sameAs": [
+      "https://x.com/choxypop",
+      "https://instagram.com/choxypop",
+      "https://tiktok.com/@choxypop",
+      "https://youtube.com/@choxypop",
+      "https://facebook.com/choxypop.oficial",
+      "https://mastodon.social/choxypop",
+      "https://bsky.app/profile/choxypop.com",
+      "https://threads.com/@choxypop",
+      "https://deviantart.com/choxypop",
+      "https://wattpad.com/choxypop",
+      "https://ko-fi.com/choxypop",
+      "https://steamcommunity.com/id/choxypop",
+      "https://choxypop.itch.io"
+    ]
   }
+}
+
 </script>
