@@ -7,6 +7,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://go.choxypop.com',
+  base: '/',
   output: 'static',
   // Eliminamos el adaptador de Cloudflare para evitar errores de arquitectura en Android
   prefetch: true,
